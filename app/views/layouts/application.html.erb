@@ -12,39 +12,20 @@
   </head>
 
   <body>
-        <div class="navbar-wagon">
+  <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-
-  <% end %>
-
-  <!-- Right Navigation -->
+    <i class="fab fa-yelp" alt=""></i>
+    <% end %>
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <!-- Links -->
-    <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Restaurant List", restaurants_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Add a Restaurant", new_restaurant_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
-    <!-- Avatar with dropdown menu -->
-    <div class="navbar-wagon-item">
-      <div class="dropdown">
-        <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li>
-
-          </li>
-          <li>
-            <%= link_to "#" do %>
-              <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-            <% end %>
-          </li>
-        </ul>
-      </div>
     </div>
   </div>
+  <div>
     <%= yield %>
-
-
+  </div>
   </body>
 </html>

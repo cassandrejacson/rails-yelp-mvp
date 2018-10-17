@@ -1,14 +1,11 @@
-<h1><%= @restaurant.name %></h1>
-<ul class="list_inline">
+<h1><%= @restaurant.name %><%= link_to edit_restaurant_path(@restaurant) do %>
+    <i class="fas fa-edit"></i>
+    <% end %></h1>
+<ul class="list_inline" id="display-info">
   <li><%= @restaurant.category %></li>
   <li><%= @restaurant.phone_number %></li>
   <li><%= @restaurant.address %></li>
 </ul>
-
-<p> <%= link_to edit_restaurant_path(@restaurant) do %>
-    <i class="fas fa-edit"></i>
-    <% end %>
-</p>
 
 <h3>Reviews
   <%= link_to new_restaurant_review_path(@restaurant) do  %>
