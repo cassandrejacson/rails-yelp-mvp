@@ -1,0 +1,28 @@
+<h1><%= @restaurant.name %></h1>
+<ul class="list_inline">
+  <li><%= @restaurant.category %></li>
+  <li><%= @restaurant.phone_number %></li>
+  <li><%= @restaurant.address %></li>
+</ul>
+
+<p> <%= link_to edit_restaurant_path(@restaurant) do %>
+    <i class="fas fa-edit"></i>
+    <% end %>
+</p>
+
+<h3>Reviews
+  <%= link_to new_restaurant_review_path(@restaurant) do  %>
+    <i class="fas fa-plus"></i>
+    <% end %>
+  </h3>
+<ul>
+  <% @reviews.each do |review| %>
+    <li>
+      <%= review.content %>
+      -
+      <%= review.rating %>
+    </li>
+  <% end %>
+</ul>
+
+<p><%= link_to "Go back to the list", restaurants_path %></p>
